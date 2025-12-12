@@ -13,7 +13,7 @@ RUN npm install
 COPY . .
 
 # Expose port for web server
-EXPOSE 3000
+EXPOSE 8000
 
 # Start the bot
 CMD ["node", "index.js"]
