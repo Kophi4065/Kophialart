@@ -1,15 +1,19 @@
 FROM node:18
 
+# Create app directory
 WORKDIR /app
 
-COPY package.json package-lock.json* ./
+# Copy package files
+COPY package*.json ./
 
+# Install dependencies
 RUN npm install
 
+# Copy project files
 COPY . .
 
-ENV PORT=8000
+# Expose port for web server
+EXPOSE 3000
 
-EXPOSE 8000
-
+# Start the bot
 CMD ["node", "index.js"]
